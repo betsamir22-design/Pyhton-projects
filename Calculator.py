@@ -1,47 +1,25 @@
-my_tasks=["wash my hands","vuying groceries"]
+print("#"*50)
+view="calculator"
+print(view.center(46,"="))
+print("#"*50)
+
 
 while True:
-  question1=input("add or delete or exit or show? :").strip().lower()
+   number1=int(input("write your first number :"))
+   operation=input("choose an operation (+,*,/,-):")
+   number2=int(input("write your second number:"))
 
-  
-
-
-  if question1 in["add","a"]:
-    
-    user_task=input("Write your tasks: ").strip()
-    if user_task in my_tasks:
-        print("task exists")
+   if operation=="+":
+       print(number1+number2)
+   elif operation=="-":
+      print(number1-number2)
+   elif operation=="/":
+    if number2==0:
+        print("math error, division by zero is not valid")
     else:
-        
-
-     my_tasks.append(user_task)
-     print("tasks")
-     for task in my_tasks:
-        print(task)
-  elif question1 in ["delete","d"]:
-    user_task=input("Write your tasks1 that you want to delete:  ").strip()
-    if user_task in my_tasks:
-        
-     my_tasks.remove(user_task)
-     print("tasks")
-     for task in my_tasks:
-         print(task)
-    else:
-        print("the task was not found")
-  elif question1 in["exit","e"]:
-      break
-  elif question1 in["show","s"]:
-      if len(my_tasks)>0:
-          
-       print("tasks")
-       for task in my_tasks:
-          print(task)
-      else:
-          print("no tasks found")
-  else:
-      
-    print("sorry,choose delete,add,or exit")
-  
-    
-
+        print(number1/number2)
+   elif operation=="*":
+      print(number1*number2)
+   else:
+      print("this is an invalid operation,choose(+,*,-,/):")
     
